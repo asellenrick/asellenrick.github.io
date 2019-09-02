@@ -10,10 +10,10 @@ module.exports = {
 		'gatsby-plugin-sass',
 		'gatsby-plugin-offline',
 		{
-			resolve: `gatsby-plugin-google-analytics`,
+			resolve: `gatsby-plugin-gtag`,
 			options: {
 				trackingId: 'UA-146569002-1',
-				head: true
+				head: false
 			}
 		}
 	]
