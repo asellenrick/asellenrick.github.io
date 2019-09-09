@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'gatsby';
 import Layout from '../components/Layout';
 
 import Scroll from '../components/Scroll';
@@ -10,7 +10,9 @@ import bluebunny from '../assets/images/bb.gif';
 import dospace from '../assets/images/dospace.gif';
 import schramm from '../assets/images/schramm.gif';
 import desDevLove from '../assets/images/desDevLove.svg';
+
 import config from '../../config';
+
 const IndexPage = () => (
 	<Layout>
 		<section id="banner">
@@ -192,6 +194,11 @@ const IndexPage = () => (
 						<a href="mailto:sellenrick@gmail.com" className="button fit primary">
 							Let's Talk
 						</a>
+					</li>
+					<li>
+						<Link to="/blog" className="button fit secondary">
+							Blog
+						</Link>
 					</li>
 				</ul>
 			</div>
