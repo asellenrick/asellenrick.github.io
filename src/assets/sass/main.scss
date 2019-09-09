@@ -1953,3 +1953,58 @@
 			}
 		}
 	}
+
+	.blog-articles{
+		display:flex;
+		flex-wrap: wrap;
+
+		@include breakpoint('<=large') {
+			flex-direction: column;
+		}
+
+		li{
+			flex: 1 0 50%;
+			list-style: none;
+		}
+
+		a {	
+			display: block;
+			border:none;
+			padding: 1em;
+			margin: 2em 0;
+			transition: border-color .5s ease;		
+			border-left: 0.5em solid #ddd;
+			background:rgba(0,0,0,0);
+			&:hover{
+				border-color:  _palette(accent6, bg);
+
+				h3:after{
+						opacity: 1;
+						transform: translateX(0);
+					}
+		
+			}
+		}
+
+		h3{
+			display: inline;
+			padding-right: 2em;
+			position: relative;
+
+			&:after{
+				position: absolute;
+				top:0;
+				right:0;
+				content:"→";
+				line-height: 130%;
+				color: _palette(accent6, bg);
+				opacity: 0;
+				transform: translateX(1em);
+				transition: all .5s ease;
+			}
+		}
+
+		h3, p{
+			margin-bottom: 0em;
+		}
+	}

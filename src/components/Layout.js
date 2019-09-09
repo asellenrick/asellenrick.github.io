@@ -28,8 +28,15 @@ class Layout extends Component {
 	}
 
 	render() {
-		const { children, fullMenu } = this.props;
+		const { children, fullMenu, headerImage } = this.props;
 		const { isPreloaded } = this.state;
+		const styling = {};
+
+		if (headerImage) {
+			const gradient = 'linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0.8))';
+			const image = `url("${headerImage}")`;
+			styling.backgroundImage = `${gradient} , ${image}`;
+		}
 
 		return (
 			<StaticQuery
@@ -59,7 +66,7 @@ class Layout extends Component {
 							<html lang="en" />
 						</Helmet>
 						<div className={isPreloaded ? 'landing main-body is-preload' : 'landing main-body'}>
-							<div id="page-wrapper">
+							<div id="page-wrapper" style={styling}>
 								<SideBar fullMenu={fullMenu} />
 								{children}
 								<Footer />
