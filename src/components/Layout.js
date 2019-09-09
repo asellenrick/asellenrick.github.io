@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { StaticQuery, graphql } from 'gatsby';
-
 import '../assets/sass/main.scss';
 import Footer from './Footer';
 import SideBar from './Sidebar';
@@ -39,48 +36,20 @@ class Layout extends Component {
 		}
 
 		return (
-			<StaticQuery
-				query={graphql`
-					query SiteTitleQuery {
-						site {
-							siteMetadata {
-								title
-							}
-						}
-					}
-				`}
-				render={(data) => (
-					<>
-						<Helmet
-							title={data.site.siteMetadata.title}
-							meta={[
-								{
-									name: 'description',
-									content: 'Andrew Sellenrick Designer and Developer'
-								},
-								{
-									name: 'keywords',
-									content: 'designer, developer, interface design, coder, portfolio'
-								}
-							]}>
-							<html lang="en" />
-						</Helmet>
-						<div className={isPreloaded ? 'landing main-body is-preload' : 'landing main-body'}>
-							<div id="page-wrapper" style={styling}>
-								<SideBar fullMenu={fullMenu} />
-								{children}
-								<Footer />
-							</div>
-						</div>
-					</>
-				)}
-			/>
+			<>
+				<Helmet>
+					<html lang="en" />
+				</Helmet>
+				<div className={isPreloaded ? 'landing main-body is-preload' : 'landing main-body'}>
+					<div id="page-wrapper" style={styling}>
+						<SideBar fullMenu={fullMenu} />
+						{children}
+						<Footer />
+					</div>
+				</div>
+			</>
 		);
 	}
 }
-
-Layout.propTypes = {
-	children: PropTypes.node.isRequired
-};
 
 export default Layout;

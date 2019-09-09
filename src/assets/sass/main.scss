@@ -177,6 +177,18 @@
 		}
 	}
 
+
+	section h1 {
+		font-size: 2em;
+		line-height: 1.5em;
+
+		@include breakpoint('<=small') {
+			font-size: 1.25em;
+			line-height: 1.75em;
+		}
+	}
+
+	
 	h2 {
 		font-size: 1.35em;
 		line-height: 1.75em;
@@ -1161,7 +1173,7 @@
 				color: _palette($p, fg-bold);
 			}
 
-			h2, h3, h4, h5, h6 {
+			h1, h2, h3, h4, h5, h6 {
 				color: _palette($p, fg-bold);
 			}
 
@@ -2009,3 +2021,24 @@
 			margin-bottom: 0em;
 		}
 	}
+
+
+	.blog{		
+
+		h1, h2, h3, h4, h5, h6 {
+			margin: 2em 0 .5em 0;
+		}
+		h1{
+			margin: 1em 0em;
+		}
+
+		p{margin: 0px 0 1em 0;}
+
+	}
+
+	.post-back{
+		margin-bottom: 1em;
+		display: inline-block;
+	}
+
+	
